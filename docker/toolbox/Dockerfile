@@ -1,4 +1,5 @@
 FROM alpine
-RUN wget http://www.us.apache.org/dist/tomcat/tomcat-6/v6.0.44/bin/apache-tomcat-6.0.44.tar.gz
-RUN tar xzf apache-tomcat-6.0.44.tar.gz
+RUN apk add --no-cache curl wget busybox-extras netcat-openbsd python py-pip bash && \
+    pip install awscli
+RUN apk --purge -v del py-pip
 CMD tail -f /dev/null
