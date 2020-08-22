@@ -1,3 +1,3 @@
 FROM alpine
-RUN apk --purge -v del py-pip
+RUN apt install python
 CMD tail -f /dev/null
